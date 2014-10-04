@@ -9,4 +9,4 @@ I used k-means++ instead of standard k-means clustering due to the number of pix
 
 To view the animated GIF open it in a browser.
 
-I took the original "Newport_seafood" phot in Newport Oregon in Feb 2010.
+I took the original "Newport_seafood" photo in Newport Oregon in Feb 2010.
