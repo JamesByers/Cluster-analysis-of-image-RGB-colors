@@ -7,6 +7,6 @@ The code in this repository takes a JPEG image as an input and then finds 1,2,3,
 
 I used k-means++ instead of standard k-means clustering due to the number of pixels with RGB values very close to one another, which caused a problem with convergence.
 
-To view the animated GIF open it in a browser.
+You can view the animated GIF [here](https://github.com/JamesByers/Cluster-analysis-of-image-RGB-colors/blob/master/Output%20Newport_seafood%20image%20and%20Animated%20GIF/Newport_seafood_k_means%2B%2B_cluster_animated.gif)
 
 I took the original "Newport_seafood" photo in Newport Oregon in Feb 2010.
