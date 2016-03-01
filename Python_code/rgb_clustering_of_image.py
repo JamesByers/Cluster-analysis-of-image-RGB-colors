@@ -19,7 +19,7 @@ from datetime import datetime
 
 font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 35)
 output_path = "../image_output_files/"
-url = "https://raw.githubusercontent.com/JamesByers/Cluster-analysis-of-image-RGB-colors/master/Image_input_files/Newport_seafood.png"
+url = "https://raw.githubusercontent.com/JamesByers/Cluster-analysis-of-image-RGB-colors/master/image_input_files/Newport_seafood.png"
 
 ##import image from local file
 #input_path = "../image_input_files/"
