@@ -4,10 +4,12 @@ Created on Tue Feb 23 16:32:34 2016
 
 @author: jim_byers
 
-Tested with python 2.7
+python 2.7
 """
 
 import Image
+import requests
+from StringIO import StringIO
 import ImageFont
 import ImageDraw
 import textwrap
@@ -27,12 +29,14 @@ def placeText (image,a_str,font): # place center justified text on image
         current_h += h + pad
 
 
-output_path = "../Output_Newport_seafood_image_and_Animated_GIF/"
-input_path = "../Image_input_files/"
-img_filename = "Newport_seafood.png"
-im = Image.open(input_path + img_filename)
-imageW = im.size[0]
-imageH = im.size[1]
+output_path = "../image_output_files/"
+#input_path = "../image_input_files/"
+#img_filename = "Newport_seafood.png"
+#im = Image.open(input_path + img_filename)
+
+url = "https://raw.githubusercontent.com/JamesByers/Cluster-analysis-of-image-RGB-colors/master/Image_input_files/Newport_seafood.png"
+response = requests.get(url)
+im = Image.open(StringIO(response.content))
 
 ## create a dataframe of the image data
 imageW = im.size[0]
@@ -89,11 +93,10 @@ for num in num_clusters:
     rgb_tuples = [tuple(x) for x in subset.values]
     temp_image = Image.new("RGB",[imageW,imageH])
     temp_image.putdata(rgb_tuples)
-#    font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 35)
     draw = ImageDraw.Draw(temp_image)
     placeText(temp_image,str(num),font)
+    temp_image.save(output_path + "cluster_out_" + str(num) + ".png")
     dt_loop_end = datetime.now()
     loop_duration = dt_loop_end - dt_loop_start
     print(str(num) + " cluster loop completed in: " + str(loop_duration))
-    temp_image.save(output_path + "cluster_out_" + str(num) + ".png")
-#    print(str(num) + ' cluster end time: ' + str(datetime.now()))     
+
