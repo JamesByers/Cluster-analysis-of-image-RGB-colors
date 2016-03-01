@@ -18,6 +18,15 @@ from sklearn.cluster import KMeans
 from datetime import datetime
 
 font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 35)
+output_path = "../image_output_files/"
+url = "https://raw.githubusercontent.com/JamesByers/Cluster-analysis-of-image-RGB-colors/master/Image_input_files/Newport_seafood.png"
+
+#input_path = "../image_input_files/"
+#img_filename = "Newport_seafood.png"
+#im = Image.open(input_path + img_filename)
+response = requests.get(url)
+im = Image.open(StringIO(response.content))
+
 def placeText (image,a_str,font): # place center justified text on image
     font_color = (255,165,0)
     para = textwrap.wrap(a_str, width=8)   
@@ -27,16 +36,6 @@ def placeText (image,a_str,font): # place center justified text on image
         w, h = draw.textsize(line, font=font)
         draw.text((imageW - 65 - (w / 2), current_h), line, font_color, font=font)
         current_h += h + pad
-
-
-output_path = "../image_output_files/"
-#input_path = "../image_input_files/"
-#img_filename = "Newport_seafood.png"
-#im = Image.open(input_path + img_filename)
-
-url = "https://raw.githubusercontent.com/JamesByers/Cluster-analysis-of-image-RGB-colors/master/Image_input_files/Newport_seafood.png"
-response = requests.get(url)
-im = Image.open(StringIO(response.content))
 
 ## create a dataframe of the image data
 imageW = im.size[0]
@@ -49,7 +48,7 @@ for y in yrange:
         r, g, b = im.getpixel((x, y))
         im_list.append([x,y,r,g,b])
 
-## write out original image
+## write original image to a local file
 temp_im = im
 placeText(temp_im,'''Original image''',font)
 temp_im.save(output_path + "cluster_out_original_image" + ".png")
@@ -62,14 +61,13 @@ num_clusters = [2,4]
 print('Starting RBG cluster calculations and posterizing images')
 for num in num_clusters:
     print("starting on calc of " + str(num) + " clusters")
-    # K-means with 3 clusters
     dt_loop_start = datetime.now()
-#     print(num + ' cluster start time: ' + str(datetime.now()))
     temp_imdf = pd.DataFrame(im_list, columns=df_columns)
     X = temp_imdf[['r','g','b']]
     km = KMeans(n_clusters=num, random_state=30)
     km.fit(X)
     temp_imdf['cluster'] = km.labels_
+
     cluster_r = {}
     cluster_g = {}
     cluster_b = {}
