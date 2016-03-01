@@ -21,9 +21,12 @@ font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 35)
 output_path = "../image_output_files/"
 url = "https://raw.githubusercontent.com/JamesByers/Cluster-analysis-of-image-RGB-colors/master/Image_input_files/Newport_seafood.png"
 
+##import image from local file
 #input_path = "../image_input_files/"
 #img_filename = "Newport_seafood.png"
 #im = Image.open(input_path + img_filename)
+
+##import image from a URL
 response = requests.get(url)
 im = Image.open(StringIO(response.content))
 
@@ -55,7 +58,6 @@ temp_im.save(output_path + "cluster_out_original_image" + ".png")
 
 ## Generate posterized images with increasing number of colors      
 df_columns = ['x','y','r','g','b']
-
 #num_clusters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,25,36,49,64,81,100,121,128,144,169,196,256]
 num_clusters = [2,4]
 print('Starting RBG cluster calculations and posterizing images')
