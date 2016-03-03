@@ -1,7 +1,7 @@
 Cluster analysis of image RGB colors
 ====================================
 
-This repository contains Python and R scripts for reducing the number of colors in images using K-Means++.
+This repository contains Python and R scripts for reducing the number of colors in images using K-Means++ clustering.
 
 You can view the animated GIF [here](image_output_files/Newport_seafood_k_means++_cluster_animated.gif).  To see a larger image click "raw" there to download the image in it's 1024x768 size.  Open the file in a browser or other tool that will run an animated gif.
 
