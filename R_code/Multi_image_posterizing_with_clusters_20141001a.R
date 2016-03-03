@@ -2,7 +2,7 @@
 
 # Load the package
 library(jpeg)
-url <- "http://www.wall321.com/thumbnails/detail/20120304/colorful%20birds%20tropical%20head%203888x2558%20wallpaper_www.wall321.com_40.jpg"
+#url <- "http://www.wall321.com/thumbnails/detail/20120304/colorful%20birds%20tropical%20head%203888x2558%20wallpaper_www.wall321.com_40.jpg"
 
 ## Download the file and save it as "Image.jpg" in the directory
 #dFile <- download.file(url, "Image.jpg")
