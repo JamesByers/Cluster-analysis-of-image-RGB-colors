@@ -12,3 +12,5 @@ The python code is the most recent and implements all the features as seen in th
 I used k-means++ instead of standard k-means clustering due to the number of pixels with RGB values very close to one another.  The k-means R library had a problem with convergence but k-means++ worked well.
 
 I shot the original Newport_seafood photo in Newport Oregon in Feb 2010.
+
+Enjoy!
