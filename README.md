@@ -1,4 +1,4 @@
-Cluster analysis of image RGB colors
+Posterize an image using K-means clustering of RGB values
 ====================================
 
 This repository contains Python and R scripts for reducing the number of colors in images using K-Means++ clustering.
