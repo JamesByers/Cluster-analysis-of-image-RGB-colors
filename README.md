@@ -1,7 +1,7 @@
 Posterize an image using K-means clustering of RGB values
 ====================================
 
-This repository contains Python and R scripts for reducing the number of colors in images using K-Means++ clustering.
+This repository contains Python and R scripts for reducing the number of colors in images using K-Means++ clustering.  The code operates on jpeg file.
 
 You can view the animated GIF [here](image_output_files/Newport_seafood_k_means++_cluster_animated.gif).  To see a larger image click "raw" there to download the image in it's 1024x768 size.  Open the file in a browser or other tool that will run an animated gif.
 
@@ -9,6 +9,6 @@ The code in this repository takes an image as an input and then finds 1,2,3, ...
 
 The python code is the most recent and implements all the features as seen in the animated gif such as the writing of the original image to the output directory, adding a newer directory structure and writing the duration of each cluster loop to the console.
 
-I shot the Newport_seafood photo in Newport Oregon in February 2010.
+I shot the Newport_seafood photo taken in Newport Oregon in February 2010.
 
 Enjoy!
