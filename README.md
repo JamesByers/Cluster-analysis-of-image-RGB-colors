@@ -1,4 +1,4 @@
-Posterize an image using K-means clustering of RGB values
+## Posterize an image using K-means clustering of RGB values
 ====================================
 
 This repository contains Python and R scripts for reducing the number of colors in images using K-Means++ clustering.  The code operates on jpeg file.
